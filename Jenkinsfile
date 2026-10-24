@@ -6,16 +6,11 @@ pipeline {
         }
     }
 
-    environment {
-        CC = credentials('key')
-    }
-
     stages {
         stage('Build') {
             steps {
                 sh '''
                     echo 'Building..'
-                    echo 'CC is configured'
                 '''
             }
         }
