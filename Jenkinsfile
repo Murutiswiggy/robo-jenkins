@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment { 
-        CC = 'key'
+        CC = "key"
     }
 
    //Build
@@ -16,7 +16,7 @@ pipeline {
                 script{
                      sh """
                     echo 'Building..'
-                    echo 'cc is : ${credentials}'
+                    echo "cc is : ${credentials}"
                 """
 
                 }
