@@ -5,12 +5,18 @@ pipeline {
         }
     }
 
+    environment { 
+        CC = 'key'
+    }
+
+   //Build
     stages {
         stage('Build') {
             steps {
                 script{
                      sh """
                     echo 'Building..'
+                    echo 'cc is : ${credentials}'
                 """
 
                 }
