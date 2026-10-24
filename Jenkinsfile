@@ -1,59 +1,56 @@
+
 pipeline {
     agent {
-        node{
+        node {
             label 'ROBO'
         }
     }
 
-    environment { 
+    environment {
         CC = credentials('key')
     }
 
-   //Build
     stages {
         stage('Build') {
             steps {
-                script{
-                     sh """
-                    echo 'Building..'
-                    echo 'cc is configured'
-                """
-
+                script {
+                    sh '''
+                        echo 'Building..'
+                        echo 'CC is configured'
+                    '''
                 }
-               
             }
         }
 
         stage('Test') {
             steps {
-               script{
-                 sh """
-                    echo 'Testing..'
-                """
-               }
+                script {
+                    sh '''
+                        echo 'Testing..'
+                    '''
+                }
             }
         }
 
         stage('Deploy') {
             steps {
-                script{
-                    sh """
-                    echo 'Deploying..'
-                """
+                script {
+                    sh '''
+                        echo 'Deploying..'
+                    '''
                 }
-               
             }
         }
     }
 
-       post { 
-        always { 
+    post {
+        always {
             echo 'I will always say Hello again!'
         }
-        success { 
+        success {
             echo 'I will success say Hello again!'
         }
-        failure { 
+        failure {
             echo 'I will failure say Hello again!'
         }
     }
