@@ -1,28 +1,41 @@
 pipeline {
-    agent any
+    agent {
+        node{
+            label 'ROBO'
+        }
+    }
 
     stages {
         stage('Build') {
             steps {
-                sh """
+                script{
+                     sh """
                     echo 'Building..'
                 """
+
+                }
+               
             }
         }
 
         stage('Test') {
             steps {
-                sh """
+               script{
+                 sh """
                     echo 'Testing..'
                 """
+               }
             }
         }
 
         stage('Deploy') {
             steps {
-                sh """
+                script{
+                     sh """
                     echo 'Deploying..'
                 """
+                }
+               
             }
         }
     }
