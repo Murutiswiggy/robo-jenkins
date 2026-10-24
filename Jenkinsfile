@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment { 
-        CC = credetials('key')
+        CC = credentials('key')
     }
 
    //Build
@@ -16,7 +16,7 @@ pipeline {
                 script{
                      sh """
                     echo 'Building..'
-                    echo "cc is configured"
+                    echo 'cc is configured'
                 """
 
                 }
