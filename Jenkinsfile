@@ -13,32 +13,26 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-                    sh '''
-                        echo 'Building..'
-                        echo 'CC is configured'
-                    '''
-                }
+                sh '''
+                    echo 'Building..'
+                    echo 'CC is configured'
+                '''
             }
         }
 
         stage('Test') {
             steps {
-                script {
-                    sh '''
-                        echo 'Testing..'
-                    '''
-                }
+                sh '''
+                    echo 'Testing..'
+                '''
             }
         }
 
         stage('Deploy') {
             steps {
-                script {
-                    sh '''
-                        echo 'Deploying..'
-                    '''
-                }
+                sh '''
+                    echo 'Deploying..'
+                '''
             }
         }
     }
@@ -47,9 +41,11 @@ pipeline {
         always {
             echo 'I will always say Hello again!'
         }
+
         success {
             echo 'I will success say Hello again!'
         }
+
         failure {
             echo 'I will failure say Hello again!'
         }
